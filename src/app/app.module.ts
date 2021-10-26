@@ -7,6 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { FirstComponent } from './first/first.component';
+import {UbigeoService} from './modules/maps/services/ubigeo.service';
+
+import { UbigeoMockService } from './modules/maps/services/ubigeo-mock.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,7 @@ import { FirstComponent } from './first/first.component';
     AppRoutingModule,
     ExampleModule,
   ],
-  providers: [],
+  providers: [{provide:UbigeoService,useClass:UbigeoMockService}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
